@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "647914789143",
+    "project_id": "devconnect-nitesh",
+    "storage_bucket": "devconnect-nitesh.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647914789143:android:83402d0939d08c9080ff52",
+        "android_client_info": {
+          "package_name": "xcom.nitesh.apps.devconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647914789143-1j02capcsnb65vsqh699gj31ukr3i7lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xcom.nitesh.apps.devconnect",
+            "certificate_hash": "288fd392c34e0eb456802761d0ad6563bfa5e6c8"
+          }
+        },
+        {
+          "client_id": "647914789143-7vej5752q5qiol16vdpu3fc9u8lpub36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2ix_kCi1UPgzaC0KqS68x5aKo-A_59aY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647914789143-7vej5752q5qiol16vdpu3fc9u8lpub36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

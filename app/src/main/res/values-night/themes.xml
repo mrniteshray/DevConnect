@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DevConnect" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/darkapp</item>
+        <item name="colorOnPrimary">@color/app</item>
+
+        <!-- Secondary branding color -->
+        <item name="colorSecondary">@color/app</item>
+        <item name="colorSecondaryVariant">@color/app</item>
+        <item name="colorOnSecondary">@color/darkapp</item>
+    </style>
+</resources>

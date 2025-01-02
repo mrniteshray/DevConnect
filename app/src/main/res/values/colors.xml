@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#16171B</color>
+    <color name="app">#33383E</color>
+    <color name="colorPrimary">#0E9DEF</color>
+    <color name="darkapp">#16171B</color>
+    <color name="textcolour">#7F8489</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

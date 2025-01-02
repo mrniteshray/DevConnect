@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background"
+    tools:context=".fragments.ConnectionFragment">
+
+    <TextView
+        android:id="@+id/textViewConnectionsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Connections"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="@android:color/white" />
+
+    <!-- RecyclerView to show the list of connections -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewConnections"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="2dp"
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+
+    <!-- Progress bar to show loading state -->
+    <ProgressBar
+        android:id="@+id/progressBarConnections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/white"
+        android:visibility="visible" />
+
+    <!-- Message when no connections are found -->
+    <TextView
+        android:id="@+id/textViewNoConnections"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="No connections found"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:visibility="gone" />
+</LinearLayout>

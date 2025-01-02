@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Ripple color when selected -->
+    <item android:color="@color/app" android:state_pressed="true" />
+    <!-- Default ripple -->
+    <item android:color="@color/white" />
+</selector>
