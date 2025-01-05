@@ -1,4 +1,4 @@
-package xcom.nitesh.apps.devconnect.fragments
+package xcom.nitesh.apps.devconnect.Model
 
 data class Connection(
     val connectionId: String = "",

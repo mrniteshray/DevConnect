@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import xcom.nitesh.apps.devconnect.ChatActivity
+import xcom.nitesh.apps.devconnect.Model.Connection
 import xcom.nitesh.apps.devconnect.databinding.FragmentChatBinding
 
 class ChatFragment : Fragment() {

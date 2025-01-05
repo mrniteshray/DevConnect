@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
+import xcom.nitesh.apps.devconnect.Model.Connection
 import xcom.nitesh.apps.devconnect.R
 
-class ChatAdapter(val userlist : List<Connection> ,val onChatClick : (Connection)-> Unit ): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
+class ChatAdapter(val userlist : List<Connection>, val onChatClick : (Connection)-> Unit ): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
 
     private val currenuseruid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
 

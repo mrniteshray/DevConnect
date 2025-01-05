@@ -13,7 +13,7 @@ import com.google.android.material.chip.Chip
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import xcom.nitesh.apps.devconnect.SignInActivity
-import xcom.nitesh.apps.devconnect.UserDataClass
+import xcom.nitesh.apps.devconnect.Model.User
 import xcom.nitesh.apps.devconnect.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
             .document(auth.currentUser!!.uid)
             .get()
             .addOnSuccessListener { document ->
-                val user = document.toObject(UserDataClass::class.java)
+                val user = document.toObject(User::class.java)
                 if (user != null) {
                     binding.about.text = user.about
                     binding.tvName.text = "${user.name}"

@@ -1,6 +1,6 @@
-package xcom.nitesh.apps.devconnect
+package xcom.nitesh.apps.devconnect.Model
 
-data class UserDataClass(
+data class User(
     val authId: String = "",
     val name: String = "",
     val about: String = "",

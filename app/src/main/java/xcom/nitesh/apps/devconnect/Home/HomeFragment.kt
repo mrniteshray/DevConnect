@@ -1,14 +1,11 @@
-package xcom.nitesh.apps.devconnect.fragments
+package xcom.nitesh.apps.devconnect.Home
 
-import android.animation.ObjectAnimator
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,22 +15,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat.recreate
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObject
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import xcom.nitesh.apps.devconnect.R
-import xcom.nitesh.apps.devconnect.SignInActivity
 import xcom.nitesh.apps.devconnect.databinding.FragmentHomeBinding
+import xcom.nitesh.apps.devconnect.Model.Connection
 import kotlin.random.Random
 
 
@@ -46,6 +36,7 @@ class HomeFragment : Fragment() {
     private val firestore = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
     private val currentUserId = auth.currentUser?.uid
+    private lateinit var homeViewModel: HomeViewModel
 
     private val matchedUsers = mutableSetOf<String>()
 
@@ -60,16 +51,33 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        firestore.collection("users").document(currentUserId!!).addSnapshotListener { value, error ->
-            if (error != null) {
-                Toast.makeText(requireContext(), "Error fetching user data", Toast.LENGTH_SHORT).show()
-                return@addSnapshotListener
+        homeViewModel = HomeViewModel(requireContext())
+
+        homeViewModel.fetchCurrentUserData()
+
+        homeViewModel.currentuserdata.observe(viewLifecycleOwner) { user ->
+            if (user != null) {
+                binding.progressBar4.visibility = View.GONE
+                binding.startMatchingButton.visibility = View.VISIBLE
+                binding.helloText.visibility = View.VISIBLE
+                binding.userImage.visibility = View.VISIBLE
+                binding.helloText.text = "Hello! \n ${user.name}"
+                Glide.with(requireContext())
+                    .load(user.profileImageUrl.toString())
+                    .into(binding.userImage)
             }
-            currentUserimage = value?.get("profileImageUrl") as? String ?: ""
-            currentUserName = value?.get("name") as? String ?: ""
-            Glide.with(this).load(currentUserimage).into(binding.userImage)
-            binding.helloText.text = "Hello! \n"+currentUserName
         }
+
+//        firestore.collection("users").document(currentUserId!!).addSnapshotListener { value, error ->
+//            if (error != null) {
+//                Toast.makeText(requireContext(), "Error fetching user data", Toast.LENGTH_SHORT).show()
+//                return@addSnapshotListener
+//            }
+//            currentUserimage = value?.get("profileImageUrl") as? String ?: ""
+//            currentUserName = value?.get("name") as? String ?: ""
+//            Glide.with(this).load(currentUserimage).into(binding.userImage)
+//            binding.helloText.text = "Hello! \n"+currentUserName
+//        }
 
         binding.startMatchingButton.setOnClickListener {
             fetchMatchUser()

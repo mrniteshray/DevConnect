@@ -1,12 +1,11 @@
 package xcom.nitesh.apps.devconnect
 
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
-import xcom.nitesh.apps.devconnect.fragments.HomeFragment
+import xcom.nitesh.apps.devconnect.Home.HomeFragment
 import xcom.nitesh.apps.devconnect.databinding.ActivityMainBinding
 import xcom.nitesh.apps.devconnect.fragments.ChatFragment
 import xcom.nitesh.apps.devconnect.fragments.ConnectionFragment

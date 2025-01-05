@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
+import xcom.nitesh.apps.devconnect.Model.Connection
 import xcom.nitesh.apps.devconnect.R
 
 class ConnectionsAdapter(
