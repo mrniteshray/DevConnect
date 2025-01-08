@@ -13,16 +13,14 @@ An Android app that matches developers based on shared skills for meaningful cha
 
 ---
 
-## 📱 Screenshots
-![ScreenShot](https://i.postimg.cc/SN9BPL1K/Picsart-25-01-02-19-36-23-989.jpg)
-![ScreenShot](https://i.postimg.cc/G360zgQN/Picsart-25-01-02-19-37-31-184.jpg)
-
-
-
----
-
 ## ⚙️ Tech Stack
 - **Language**: Kotlin  
 - **Architecture**: MVVM  
 - **Backend**: Firebase  
-- **UI**: XML 
+- **UI**: XML
+
+---
+
+## 📱 Screenshots
+![ScreenShot](https://i.postimg.cc/SN9BPL1K/Picsart-25-01-02-19-36-23-989.jpg)
+![ScreenShot](https://i.postimg.cc/G360zgQN/Picsart-25-01-02-19-37-31-184.jpg)
